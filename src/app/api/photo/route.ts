@@ -44,7 +44,7 @@ export async function POST(req: NextRequest) {
       size: "512x512",
     });
 
-    const resultUrl = response.data[0]?.url;
+    const resultUrl = response.data?.[0]?.url
 
     if (!resultUrl) {
       return NextResponse.json({ error: "Gagal generate gambar" }, { status: 500 });
