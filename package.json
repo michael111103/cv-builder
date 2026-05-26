@@ -17,7 +17,7 @@
     "lucide-react": "^0.383.0",
     "framer-motion": "^11.3.8",
     "openai": "^4.52.7",
-    "@anthropic-ai/sdk": "^0.39.0"
+    "@anthropic-ai/sdk": "^0.39.0",
     "react-dropzone": "^14.2.3",
     "react-hot-toast": "^2.4.1",
     "clsx": "^2.1.1",
