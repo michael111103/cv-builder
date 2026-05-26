@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
 
     // Convert file to base64
     const bytes = await imageFile.arrayBuffer();
-    const base64 = Buffer.from(bytes).toBuffer64();
+    const base64 = Buffer.from(bytes).toString('base64')
     const dataUrl = `data:${imageFile.type};base64,${base64}`;
 
     // Build prompt
