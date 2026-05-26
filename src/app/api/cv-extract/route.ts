@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
     const base64 = Buffer.from(bytes).toString("base64");
 
     const response = await client.messages.create({
-      model: "claude-sonnet-4-20250514",
+      model: "claude-sonnet-4-5",
       max_tokens: 2000,
       messages: [
         {
