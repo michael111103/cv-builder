@@ -15,26 +15,63 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Tidak ada gambar" }, { status: 400 });
     }
 
+    const bgDescription: Record<string, string> = {
+      white: "pure white (#FFFFFF), RGB(255,255,255)",
+      "light-gray": "light gray (#F0F0F0), RGB(240,240,240)",
+      "light-blue": "light blue (#D6E4F0), RGB(214,228,240)",
+      blue: "medium blue (#2E86C1), RGB(46,134,193)",
+      gray: "medium gray (#808080), RGB(128,128,128)",
+    };
+
+    const bgDesc = bgDescription[bgColor] || `solid ${bgColor}`;
+
     let prompt = "";
     if (addSuit && bgColor) {
-      prompt = `You are a photo editor. Your ONLY tasks are:
-1. BACKGROUND: Replace ONLY the background with a flat solid ${bgColor} color. No gradients, no shadows, no textures.
-2. CLOTHING: Replace ONLY the clothing/shirt area with a formal black suit jacket, white dress shirt, and black tie.
-DO NOT change, alter, modify, regenerate, or touch the person's face, skin, eyes, nose, mouth, hair, head shape, or any facial features in ANY way. The face must be 100% pixel-perfect identical to the original photo.
-DO NOT change the person's body position, head angle, or pose.
-DO NOT add any new lighting effects on the face.
-Only edit: background and clothing. Nothing else.`;
+      prompt = `You are a professional photo retoucher. Follow these instructions STRICTLY:
+
+WHAT TO CHANGE:
+1. BACKGROUND ONLY: Replace the entire background with a completely flat, solid ${bgDesc} color. Zero shadow, zero gradient, zero vignette, zero texture on background.
+2. CLOTHING ONLY: Replace only the shirt/clothing area with a formal black suit jacket, white dress shirt, and black tie.
+
+WHAT TO NEVER CHANGE (ABSOLUTE RULES):
+- DO NOT alter, regenerate, smooth, reshape, or modify the face in ANY way
+- DO NOT change the eyes, nose, mouth, ears, chin, jawline, or any facial feature
+- DO NOT modify, smooth, reshape, or alter the hair — keep every strand pixel-identical to the original
+- DO NOT relight, brighten, darken, or change the skin tone or facial lighting
+- DO NOT zoom in or crop closer than the original photo
+- DO NOT change the head angle, body position, or pose
+- DO NOT add makeup, smooth skin, or enhance appearance
+
+The face and hair must be 100% identical to the source photo. Only background and clothing change.`;
     } else if (addSuit) {
-      prompt = `You are a photo editor. Your ONLY task is:
-1. CLOTHING: Replace ONLY the clothing/shirt area with a formal black suit jacket, white dress shirt, and black tie.
-DO NOT change, alter, modify, regenerate, or touch the person's face, skin, eyes, nose, mouth, hair, head shape, or any facial features in ANY way. The face must be 100% pixel-perfect identical to the original photo.
-DO NOT change the background, body position, head angle, or pose.
-Only edit: clothing. Nothing else.`;
+      prompt = `You are a professional photo retoucher. Follow these instructions STRICTLY:
+
+WHAT TO CHANGE:
+1. CLOTHING ONLY: Replace only the shirt/clothing area with a formal black suit jacket, white dress shirt, and black tie.
+
+WHAT TO NEVER CHANGE (ABSOLUTE RULES):
+- DO NOT alter, regenerate, smooth, reshape, or modify the face in ANY way
+- DO NOT change the eyes, nose, mouth, ears, chin, jawline, or any facial feature
+- DO NOT modify, smooth, reshape, or alter the hair — keep every strand pixel-identical to the original
+- DO NOT relight, brighten, darken, or change the skin tone or facial lighting
+- DO NOT zoom in or crop closer than the original photo
+- DO NOT change the background, head angle, body position, or pose
+
+The face and hair must be 100% identical to the source photo. Only clothing changes.`;
     } else {
-      prompt = `You are a photo editor. Your ONLY task is:
-1. BACKGROUND: Replace ONLY the background with a flat solid ${bgColor} color. No gradients, no shadows, no textures.
-DO NOT change, alter, modify, regenerate, or touch the person's face, skin, eyes, nose, mouth, hair, head shape, body, clothing, or any other part of the person in ANY way.
-Only edit: background. Nothing else.`;
+      prompt = `You are a professional photo retoucher. Follow these instructions STRICTLY:
+
+WHAT TO CHANGE:
+1. BACKGROUND ONLY: Replace the entire background with a completely flat, solid ${bgDesc} color. Zero shadow, zero gradient, zero vignette, zero texture on background.
+
+WHAT TO NEVER CHANGE (ABSOLUTE RULES):
+- DO NOT alter, regenerate, smooth, reshape, or modify the face in ANY way
+- DO NOT change any part of the person at all — face, hair, clothing, skin, body
+- DO NOT relight, brighten, darken, or change the skin tone or facial lighting
+- DO NOT zoom in or crop closer than the original photo
+- DO NOT change the head angle, body position, or pose
+
+The person must be 100% identical to the source photo. Only the background changes.`;
     }
 
     const response = await openai.images.edit({
