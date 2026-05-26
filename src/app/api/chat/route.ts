@@ -36,7 +36,6 @@ export async function POST(req: NextRequest) {
   try {
     const { message, history, sessionId } = await req.json();
 
-    // Build messages for Claude
     const messages = [
       ...history.map((m: { role: string; content: string }) => ({
         role: m.role as "user" | "assistant",
@@ -46,7 +45,7 @@ export async function POST(req: NextRequest) {
     ];
 
     const response = await client.messages.create({
-      model: "claude-sonnet-4-20250514",
+      model: "claude-sonnet-4-5",
       max_tokens: 1024,
       system: SYSTEM_PROMPT,
       messages,
@@ -56,7 +55,6 @@ export async function POST(req: NextRequest) {
       ? response.content[0].text
       : "Maaf, terjadi kesalahan.";
 
-    // Save to Supabase
     const db = supabaseAdmin();
     await db.from("chat_history").insert([
       { role: "user", content: message, session_id: sessionId },
