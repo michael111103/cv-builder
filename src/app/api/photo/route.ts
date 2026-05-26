@@ -17,16 +17,24 @@ export async function POST(req: NextRequest) {
 
     let prompt = "";
     if (addSuit && bgColor) {
-      prompt = `Edit this photo professionally:
-1. Replace the background with a solid ${bgColor} color, clean and uniform
-2. The person should be wearing a formal black suit/tuxedo with a white dress shirt and dark tie
-3. Keep the person's face, hair, and skin tone exactly the same
-4. The result should look like a professional passport/ID photo
-5. Background must be completely solid ${bgColor}, no shadows or gradients on background`;
+      prompt = `You are a photo editor. Your ONLY tasks are:
+1. BACKGROUND: Replace ONLY the background with a flat solid ${bgColor} color. No gradients, no shadows, no textures.
+2. CLOTHING: Replace ONLY the clothing/shirt area with a formal black suit jacket, white dress shirt, and black tie.
+DO NOT change, alter, modify, regenerate, or touch the person's face, skin, eyes, nose, mouth, hair, head shape, or any facial features in ANY way. The face must be 100% pixel-perfect identical to the original photo.
+DO NOT change the person's body position, head angle, or pose.
+DO NOT add any new lighting effects on the face.
+Only edit: background and clothing. Nothing else.`;
     } else if (addSuit) {
-      prompt = `Edit this photo: Replace the person's clothing with a formal black suit/tuxedo with white dress shirt and dark tie. Keep face and hair exactly the same. Professional appearance.`;
+      prompt = `You are a photo editor. Your ONLY task is:
+1. CLOTHING: Replace ONLY the clothing/shirt area with a formal black suit jacket, white dress shirt, and black tie.
+DO NOT change, alter, modify, regenerate, or touch the person's face, skin, eyes, nose, mouth, hair, head shape, or any facial features in ANY way. The face must be 100% pixel-perfect identical to the original photo.
+DO NOT change the background, body position, head angle, or pose.
+Only edit: clothing. Nothing else.`;
     } else {
-      prompt = `Replace the background of this photo with a solid, uniform ${bgColor} background. Keep the person exactly the same. The background should be completely flat ${bgColor} color with no shadows or gradients.`;
+      prompt = `You are a photo editor. Your ONLY task is:
+1. BACKGROUND: Replace ONLY the background with a flat solid ${bgColor} color. No gradients, no shadows, no textures.
+DO NOT change, alter, modify, regenerate, or touch the person's face, skin, eyes, nose, mouth, hair, head shape, body, clothing, or any other part of the person in ANY way.
+Only edit: background. Nothing else.`;
     }
 
     const response = await openai.images.edit({
