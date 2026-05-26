@@ -15,12 +15,6 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Tidak ada gambar" }, { status: 400 });
     }
 
-    // Convert file to base64
-    const bytes = await imageFile.arrayBuffer();
-    const base64 = Buffer.from(bytes).toString('base64')
-    const dataUrl = `data:${imageFile.type};base64,${base64}`;
-
-    // Build prompt
     let prompt = "";
     if (addSuit && bgColor) {
       prompt = `Edit this photo professionally:
@@ -35,22 +29,22 @@ export async function POST(req: NextRequest) {
       prompt = `Replace the background of this photo with a solid, uniform ${bgColor} background. Keep the person exactly the same. The background should be completely flat ${bgColor} color with no shadows or gradients.`;
     }
 
-    // Use GPT-4o image editing
     const response = await openai.images.edit({
-      model: "dall-e-2", // dall-e-2 supports edits; gpt-4o image API may vary
-      image: await imageFile,
+      model: "gpt-image-1",
+      image: imageFile,
       prompt: prompt,
       n: 1,
-      size: "512x512",
+      size: "1024x1024",
     });
 
-    const resultUrl = response.data?.[0]?.url
+    const base64Image = response.data?.[0]?.b64_json;
 
-    if (!resultUrl) {
+    if (!base64Image) {
       return NextResponse.json({ error: "Gagal generate gambar" }, { status: 500 });
     }
 
-    // Save result to Supabase
+    const resultUrl = `data:image/png;base64,${base64Image}`;
+
     const db = supabaseAdmin();
     const { data: saved } = await db.from("foto_results").insert({
       result_url: resultUrl,
