@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { ChatIcon } from "@/components/Icons";
 
-const WHATSAPP_NUMBER = "6281234567890";
+const WHATSAPP_NUMBER = "6285846466029";
 
 export default function ContactForm() {
   const [form, setForm] = useState({
