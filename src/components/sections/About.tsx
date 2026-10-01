@@ -21,7 +21,7 @@ export default function About() {
               Semarang, Indonesia
             </span>
             <p className="mb-4 text-muted">
-              PT Bara Karbon Energi is an export supplier of coconut shell
+              PT Bara Karbon Internasional is an export supplier of coconut shell
               charcoal briquettes, working with a certified manufacturing
               partner near Tanjung Emas Port in Semarang.
             </p>
