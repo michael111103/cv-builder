@@ -40,16 +40,16 @@ export default function Hero() {
 
       <div className="mx-auto mt-9 grid max-w-xl grid-cols-3 gap-4 text-center">
         <div>
-          <div className="text-xl font-extrabold text-ember-light">18 to 25t</div>
+          <div className="text-xl font-extrabold text-ember-light">18 to 25Ton</div>
           <div className="text-xs text-muted">Capacity per container</div>
         </div>
         <div>
-          <div className="text-xl font-extrabold text-ember-light">90t</div>
+          <div className="text-xl font-extrabold text-ember-light">90Ton</div>
           <div className="text-xs text-muted">Partner production capacity per month</div>
         </div>
         <div>
-          <div className="text-xl font-extrabold text-ember-light">2026</div>
-          <div className="text-xs text-muted">PT Bara Karbon Energi founded</div>
+          <div className="text-xl font-extrabold text-ember-light">2024</div>
+          <div className="text-xs text-muted">PT Bara Karbon Internasional founded</div>
         </div>
       </div>
     </section>
