@@ -3,9 +3,9 @@ import "./globals.css";
 import { LanguageProvider } from "@/lib/LanguageContext";
 
 export const metadata: Metadata = {
-  title: "Bara Karbon Energi | Coconut Charcoal Exporter",
+  title: "Java Charcoal | Coconut Charcoal Exporter",
   description:
-    "PT Bara Karbon Energi exports premium shisha and BBQ coconut shell charcoal briquettes from Central Java, Indonesia. FOB Semarang.",
+    "Java Charcoal exports premium shisha and BBQ coconut shell charcoal briquettes from Central Java, Indonesia. FOB Semarang.",
 };
 
 export default function RootLayout({
