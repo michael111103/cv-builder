@@ -14,6 +14,7 @@ const config: Config = {
         ink: "#f2ede6",
         muted: "#a89e93",
         ember: { DEFAULT: "#ff6a2b", light: "#ffb347" },
+        whatsapp: { DEFAULT: "#25D366", dark: "#1DA851" },
       },
     },
   },
