@@ -152,3 +152,45 @@ export function ChevronDownIcon({ className }: IconProps) {
     </svg>
   );
 }
+
+export function WhatsAppIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+      <path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 2a8 8 0 0 1 6.9 12.1l-.3.5.6 2.3-2.3-.6-.5.3A8 8 0 1 1 12 4Z" />
+      <path d="M9 7.8c.3-.6.6-.6.9-.6h.6c.2 0 .4 0 .6.5l.7 1.7c.1.3.1.5-.1.8l-.5.6c-.1.2-.2.3 0 .6.4.7 1.6 2 2.9 2.5.3.1.5.1.6-.1l.6-.7c.2-.2.4-.3.7-.1l1.6.8c.3.1.5.2.5.5 0 1-1.2 1.9-2.1 1.9-1.8 0-4.4-1.1-6-3.4-1.1-1.5-1.5-2.9-1.5-3.6 0-.6.2-1.1.5-1.6Z" />
+    </svg>
+  );
+}
+
+export function MenuIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" className={className}>
+      <path d="M3 6h18M3 12h18M3 18h18" />
+    </svg>
+  );
+}
+
+export function CloseIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" className={className}>
+      <path d="M6 6l12 12M18 6L6 18" />
+    </svg>
+  );
+}
+
+export function SearchIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <circle cx="10.5" cy="10.5" r="6.5" />
+      <path d="M20 20l-4.5-4.5" />
+    </svg>
+  );
+}
+
+export function FilterIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M4 6h16M7 12h10M10 18h4" />
+    </svg>
+  );
+}
