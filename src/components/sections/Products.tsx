@@ -2,7 +2,7 @@
 
 import { useLanguage } from "@/lib/LanguageContext";
 
-const images = ["shisha.jpg", "bbq.jpg"];
+const images = ["sisha.jpg", "bbq.jpg"];
 
 export default function Products() {
   const { t } = useLanguage();
