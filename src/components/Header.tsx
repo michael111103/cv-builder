@@ -23,7 +23,7 @@ export default function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-2 font-extrabold tracking-wide">
           <span className="h-7 w-7 rounded-full bg-gradient-to-br from-ember to-ember-light" />
-          BARA KARBON ENERGI
+          JAVA CHARCOAL
         </Link>
 
         <nav className="hidden gap-7 text-sm text-muted md:flex">
