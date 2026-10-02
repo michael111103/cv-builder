@@ -103,14 +103,14 @@ const en: Translations = {
     eyebrow: "Coconut Charcoal Export",
     title: "Reliable Export Partner for Premium Shisha and BBQ Charcoal Briquettes",
     subtitle:
-      "PT Bara Karbon Energi sources, quality checks, and exports coconut shell charcoal briquettes from Central Java. FOB Semarang, ready for shipment worldwide.",
+      "PT Bara Karbon Internasional sources, quality checks, and exports coconut shell charcoal briquettes from Central Java. FOB Semarang, ready for shipment worldwide.",
     ctaWhatsapp: "WhatsApp",
     ctaProducts: "View Products",
     badge1: "Partnered with a certified manufacturer",
     badge2: "Export document support",
     stat1: "Capacity per container",
     stat2: "Partner production capacity per month",
-    stat3: "PT Bara Karbon Energi founded",
+    stat3: "PT Bara Karbon Internasional founded",
     waMessage: "Hello, I am interested in your coconut charcoal briquettes. Could you share more information?",
   },
   why: {
@@ -127,7 +127,7 @@ const en: Translations = {
     tag: "Who We Are",
     title: "Export Partner, Not Just a Middleman",
     badge: "Semarang, Indonesia",
-    p1: "PT Bara Karbon Energi is an export supplier of coconut shell charcoal briquettes, working with a certified manufacturing partner near Tanjung Emas Port in Semarang.",
+    p1: "PT Bara Karbon Internasional is an export supplier of coconut shell charcoal briquettes, working with a certified manufacturing partner near Tanjung Emas Port in Semarang.",
     p2: "We handle quality control, export documentation, and logistics, so buyers get one reliable point of contact from quotation to shipment.",
   },
   products: {
@@ -246,14 +246,14 @@ const id: Translations = {
     eyebrow: "Ekspor Briket Arang Kelapa",
     title: "Mitra Ekspor Terpercaya untuk Briket Shisha dan BBQ Premium",
     subtitle:
-      "PT Bara Karbon Energi menyediakan, mengontrol mutu, dan mengekspor briket arang batok kelapa dari Jawa Tengah. FOB Semarang, siap dikirim ke seluruh dunia.",
+      "PT Bara Karbon Internasional menyediakan, mengontrol mutu, dan mengekspor briket arang batok kelapa dari Jawa Tengah. FOB Semarang, siap dikirim ke seluruh dunia.",
     ctaWhatsapp: "WhatsApp",
     ctaProducts: "Lihat Produk",
     badge1: "Bermitra dengan pabrik bersertifikat",
     badge2: "Dukungan dokumen ekspor",
     stat1: "Kapasitas per kontainer",
     stat2: "Kapasitas produksi mitra per bulan",
-    stat3: "PT Bara Karbon Energi berdiri",
+    stat3: "PT Bara Karbon Internasional berdiri",
     waMessage: "Halo, saya tertarik dengan briket arang kelapa Anda. Boleh minta info lebih lanjut?",
   },
   why: {
@@ -270,7 +270,7 @@ const id: Translations = {
     tag: "Siapa Kami",
     title: "Mitra Ekspor, Bukan Sekadar Perantara",
     badge: "Semarang, Indonesia",
-    p1: "PT Bara Karbon Energi adalah eksportir briket arang batok kelapa yang bermitra dengan pabrik produksi bersertifikat di dekat Pelabuhan Tanjung Emas, Semarang.",
+    p1: "PT Bara Karbon Internasional adalah eksportir briket arang batok kelapa yang bermitra dengan pabrik produksi bersertifikat di dekat Pelabuhan Tanjung Emas, Semarang.",
     p2: "Kami menangani kontrol mutu, dokumen ekspor, dan logistik, sehingga buyer punya satu titik kontak yang andal dari penawaran sampai pengiriman.",
   },
   products: {
