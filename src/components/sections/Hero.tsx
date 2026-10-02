@@ -33,7 +33,7 @@ export default function Hero() {
 
       <div className="mt-10 aspect-[16/7] overflow-hidden rounded-2xl border border-line bg-card">
         <img
-          src="/images/pabrik.png"
+          src="/images/pabrik.jpg"
           alt="Factory and export container"
           className="h-full w-full object-cover"
         />
