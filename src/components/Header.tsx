@@ -6,6 +6,18 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { WHATSAPP_NUMBER } from "@/lib/constants";
 import { WhatsAppIcon, MenuIcon, CloseIcon } from "@/components/Icons";
 
+function Logo({ className = "h-9 w-9" }: { className?: string }) {
+  return (
+    <span className={`relative inline-block shrink-0 overflow-hidden ${className}`}>
+      <img
+        src="/images/logo.png"
+        alt="Java Charcoal logo"
+        className="h-full w-full scale-150 object-contain"
+      />
+    </span>
+  );
+}
+
 export default function Header() {
   const { t, locale, setLocale } = useLanguage();
   const [open, setOpen] = useState(false);
@@ -21,9 +33,9 @@ export default function Header() {
   return (
     <>
       <header className="sticky top-0 z-30 border-b border-line bg-coal/90 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
           <Link href="/" className="flex items-center gap-2 font-extrabold tracking-wide">
-            <span className="h-7 w-7 rounded-full bg-gradient-to-br from-ember to-ember-light" />
+            <Logo />
             JAVA CHARCOAL
           </Link>
 
@@ -69,8 +81,11 @@ export default function Header() {
 
       {open && (
         <div className="fixed inset-0 z-40 overflow-y-auto bg-coal md:hidden">
-          <div className="flex items-center justify-between border-b border-line px-6 py-4">
-            <span className="font-extrabold">BARA KARBON ENERGI</span>
+          <div className="flex items-center justify-between border-b border-line px-6 py-3">
+            <span className="flex items-center gap-2 font-extrabold tracking-wide">
+              <Logo />
+              JAVA CHARCOAL
+            </span>
             <button onClick={() => setOpen(false)} aria-label="Close menu">
               <CloseIcon className="h-6 w-6" />
             </button>
